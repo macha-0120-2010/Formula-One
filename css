@@ -1,0 +1,59 @@
+body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            -webkit-tap-highlight-color: transparent; 
+            background-color: #f8fafc;
+        }
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        
+        /* Custom UI Elements */
+        .pos-select { 
+            background: #f1f5f9;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 12px;
+            outline: none; border: none; appearance: none; text-align: center;
+        }
+        .config-select { 
+            background: #1e293b; color: white; font-size: 10px; font-weight: bold; 
+            padding: 2px 4px; border-radius: 4px; outline: none; border: none; 
+            appearance: none; text-align: center; min-width: 36px; 
+        }
+        .pit-select { 
+            background: #334155; color: white; font-size: 10px; font-weight: bold; 
+            padding: 2px 4px; border-radius: 4px; outline: none; border: none; 
+            appearance: none; text-align: center; 
+        }
+        .record-select {
+            background: #f8fafc; color: #1e293b; font-size: 10px; font-weight: 900;
+            padding: 4px 6px; border-radius: 6px; outline: none; border: 1px solid #e2e8f0;
+            appearance: none; text-align: center;
+        }
+        
+        /* Tire Select Styling */
+        .tire-select { 
+            width: 100%; background: #ffffff; font-size: 11px; font-weight: 900; 
+            padding: 10px; border-radius: 12px; border: 2px solid #e2e8f0; 
+            outline: none; appearance: none; text-align: center; 
+            transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .tire-s { color: #ef4444; border-color: rgba(239, 68, 68, 0.2); background-color: #fffafb; } 
+        .tire-m { color: #eab308; border-color: rgba(234, 179, 8, 0.2); background-color: #fffdf5; }
+        .tire-h { color: #475569; border-color: rgba(71, 85, 105, 0.2); background-color: #f8fafc; }
+        .tire-w { color: #3b82f6; border-color: rgba(59, 130, 246, 0.2); background-color: #f5f9ff; }
+
+        .opt-s { color: #ef4444; font-weight: bold; }
+        .opt-m { color: #eab308; font-weight: bold; }
+        .opt-h { color: #475569; font-weight: bold; }
+        .opt-w { color: #3b82f6; font-weight: bold; }
+
+        .stint-card { 
+            background: rgba(255, 255, 255, 0.8); padding: 14px; border-radius: 20px; 
+            display: flex; flex-direction: column; gap: 10px; border: 1px solid #f1f5f9; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        select { cursor: pointer; }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
