@@ -273,8 +273,11 @@ const drivers2025 = [
 
 【Race Results】
 ${dData.map(d => {
-    const teamLabel = d.teamType === 'my' ? '[自チーム]' : '[相手チーム]';
-    return `${teamLabel} ${d.name}: 予選${d.q}位 → 決勝${d.f}位 (${d.stints}) | FL: ${d.fl} | FPit: ${d.fp}s`;
+    const isMyTeam = d.teamType === 'my';
+    const teamLabel = isMyTeam ? '[自チーム]' : '[相手チーム]';
+  const nameDisplay = isMyTeam ? ` ${d.name}` : ''; 
+    
+    return `${teamLabel}${nameDisplay}: 予選${d.q}位 → 決勝${d.f}位 (${d.stints}) | FL: ${d.fl} | FPit: ${d.fp}s`;
 }).join('\n')}
 
 【Insights】
