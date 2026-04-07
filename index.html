@@ -1,10 +1,16 @@
-<script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>STRAT LOG PRO | 2025 Season</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     
-<head>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
-
+<body class="pb-32">
 
     <header class="bg-white border-b border-slate-100 px-6 py-4 sticky top-0 z-50 flex justify-between items-center">
         <div>
@@ -17,109 +23,16 @@
     </header>
 
     <main class="p-4 space-y-6 max-w-2xl mx-auto">
-        
         <section class="bg-white rounded-[2rem] p-5 shadow-sm border border-slate-100 space-y-4">
-            <div class="space-y-3">
-                <div class="flex gap-2">
-                    <div class="flex-1 space-y-1">
-                        <label class="text-[9px] font-black text-slate-300 uppercase tracking-widest px-1">開催地 (2025 Calendar)</label>
-                        <select id="circuit" class="w-full bg-slate-50 p-3 rounded-xl font-bold text-sm outline-none border-none">
-                            <option selected>日本</option>
-                            <option>オーストラリア</option>
-                            <option>中国</option>
-                            <option>バーレーン</option>
-                        </select>
-                    </div>
-                    <div class="w-24 space-y-1">
-                        <label class="text-[9px] font-black text-slate-300 uppercase tracking-widest px-1">天候</label>
-                        <select id="weather" class="w-full bg-slate-50 p-3 rounded-xl font-bold text-sm outline-none border-none">
-                            <option selected>晴れ</option>
-                            <option>曇り</option>
-                            <option>雨</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="flex items-center gap-2">
-                    <div class="flex-1 space-y-1">
-                        <label class="text-[9px] font-black text-slate-300 uppercase tracking-widest px-1">スコア差</label>
-                        <select id="scoreNum" class="w-full bg-slate-50 p-3 rounded-xl font-bold text-sm outline-none border-none"></select>
-                    </div>
-                    <div class="flex-1 space-y-1">
-                        <label class="text-[9px] font-black text-slate-300 uppercase tracking-widest px-1">状況</label>
-                        <select id="scoreStatus" class="w-full bg-slate-50 p-3 rounded-xl font-bold text-sm outline-none border-none">
-                            <option value="優勢">優勢</option>
-                            <option value="劣勢" selected>劣勢</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
         <section class="bg-slate-900 rounded-[2rem] p-5 shadow-xl text-white space-y-4">
-            <h2 class="text-[20px] font-black font-orbitron text-red-500 tracking-[0.2em] uppercase">Machine Config</h2>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="space-y-3">
-                    <div class="flex flex-col gap-1">
-                        <p class="text-[10px] font-bold text-slate-500 uppercase">My Team</p>
-                        <div class="flex items-center gap-1">
-                            <span class="text-[10px] text-slate-400">Pit:</span>
-                            <div class="flex items-center gap-0.5">
-                                <select id="myPitSec" class="pit-select"></select>
-                                <span class="text-[10px] text-slate-500">.</span>
-                                <select id="myPitMs" class="pit-select"></select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-[10px] grid grid-cols-1 gap-2 text-slate-300">
-                        <div class="flex items-center justify-between"><span>Speed:</span><select id="my_S" class="config-select"></select></div>
-                        <div class="flex items-center justify-between"><span>Cornering:</span><select id="my_C" class="config-select"></select></div>
-                        <div class="flex items-center justify-between"><span>Power Unit:</span><select id="my_PU" class="config-select"></select></div>
-                        <div class="flex items-center justify-between"><span>Qualifing:</span><select id="my_Qu" class="config-select"></select></div>
-                        <div class="flex items-center justify-between"><span>DRS:</span><select id="my_DRS" class="config-select"></select></div>
-                    </div>
-                </div>
-                <div class="space-y-3 border-l border-slate-800 pl-4">
-                    <div class="flex flex-col gap-1">
-                        <p class="text-[8px] font-bold text-slate-500 uppercase">Opponent</p>
-                        <div class="flex items-center gap-1">
-                            <span class="text-[7px] text-slate-400">Pit:</span>
-                            <div class="flex items-center gap-0.5">
-                                <select id="opPitSec" class="pit-select"></select>
-                                <span class="text-[8px] text-slate-500">.</span>
-                                <select id="opPitMs" class="pit-select"></select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-[10px] grid grid-cols-1 gap-2 text-slate-300">
-                        <div class="flex items-center justify-between"><span>Speed:</span><select id="op_S" class="config-select"></select></div>
-                        <div class="flex items-center justify-between"><span>Cornering:</span><select id="op_C" class="config-select"></select></div>
-                        <div class="flex items-center justify-between"><span>Power Unit:</span><select id="op_PU" class="config-select"></select></div>
-                        <div class="flex items-center justify-between"><span>Qualifing:</span><select id="op_Qu" class="config-select"></select></div>
-                        <div class="flex items-center justify-between"><span>DRS:</span><select id="op_DRS" class="config-select"></select></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
         <div id="driversContainer" class="space-y-8"></div>
 
-        <section class="space-y-2 px-1">
-            <h2 class="text-[10px] font-black text-slate-300 uppercase tracking-widest">Insights</h2>
-            <div class="bg-white rounded-[2rem] p-4 shadow-sm border border-slate-100">
-                <textarea id="userNotes" rows="4" class="w-full text-sm outline-none resize-none font-medium text-slate-600 bg-transparent leading-relaxed" placeholder="気づきを入力..."></textarea>
-            </div>
-        </section>
-
         <div id="reportArea" class="hidden space-y-4 mb-20">
-            <div class="bg-white rounded-[2rem] p-6 shadow-sm border-2 border-indigo-100 space-y-6">
-                <div class="space-y-2">
-                    <h3 class="font-black text-sm text-indigo-900 border-b pb-2">レース結果分析</h3>
-                    <p id="reportText" class="text-xs text-slate-600 leading-relaxed whitespace-pre-wrap"></p>
-                </div>
-                <button onclick="copyToClipboard()" class="w-full py-2 text-[10px] font-bold text-indigo-500 border border-indigo-100 rounded-xl hover:bg-indigo-50">クリップボードにコピー</button>
             </div>
-        </div>
-
     </main>
 
     <div class="fixed bottom-6 left-0 right-0 px-6 z-50">
@@ -127,3 +40,7 @@
             <span class="font-black font-orbitron tracking-widest">GENERATE REPORT</span>
         </button>
     </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
